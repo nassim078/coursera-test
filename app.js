@@ -37,24 +37,24 @@
 //
 // })();
 
-(function (){
-
-  'use strict';
-
-  angular.module( "MsgApp" , [])
-  .controller("MsgController", MsgController) {
-  let MsgController = function($scope , $filter)
-    $scope.name="nassim";
-
-    $scope.upper = function (){
-
-      let upCase = $filter('uppercase');
-      $scope.name= upCase($scope.name);
-
-    }
-
-  })
-})();
+// (function (){
+//
+//   'use strict';
+//
+//   angular.module( "MsgApp" , [])
+//   .controller("MsgController", MsgController) {
+//   let MsgController = function($scope , $filter)
+//     $scope.name="nassim";
+//
+//     $scope.upper = function (){
+//
+//       let upCase = $filter('uppercase');
+//       $scope.name= upCase($scope.name);
+//
+//     }
+//
+//   })
+// })();
 
 (function (){
   'use strict';
