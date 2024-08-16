@@ -60,11 +60,14 @@
   'use strict';
 
   angular.module("MsgApp" , [])
-  .controller("MsgController" , MsgController);
+  .controller("MsgController" , MsgController)
+  .Filter('loves', lovesfilter);
 
-  MsgController.$inject = ['$scope', '$filter'];
+  MsgController.$inject = ['$scope', 'lovesfilter'];
 
-  function MsgController($scope , $filter){
+  function MsgController($scope , lovesfilter)
+  {
+
     $scope.name="nassim";
     $scope.stateOfBeing= "hungry";
 
@@ -72,10 +75,25 @@
       let msg = "Nassim likes cokkies";
       let output = $filter('uppercase')(msg);
       return output;
+
+      $scope.saylovesMessage= function(){
+        let msg = "Nassim likes cokkies";
+        let output = $filter('uppercase')(msg);
+        return output;
     };
 
-  $scope.feedYaakov = function (){
-    $scope.stateOfBeing = "fed";
-  };
-};
+    $scope.feedYaakov = function (){
+      $scope.stateOfBeing = "fed";
+    };
+  }
+
+  function lovesfilter()
+  {
+    return function(input){
+      input = input || "";
+      input = input.replace("likes","loves");
+      return input
+    }
+  }
+
   })();
