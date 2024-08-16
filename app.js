@@ -41,9 +41,9 @@
 
   'use strict';
 
-  angular.module( "DiApp" , [])
-  .controller("DiController", function($scope , $filter){
-
+  angular.module( "MsgApp" , [])
+  .controller("MsgController", MsgController) {
+  let MsgController = function($scope , $filter)
     $scope.name="nassim";
 
     $scope.upper = function (){
@@ -54,4 +54,26 @@
     }
 
   })
+})();
+
+(function (){
+  'use strict';
+
+  angular.module("MsgApp" , [])
+  .controller("MsgController" , MsgController);
+
+  function MsgController($scope , $filter){
+    $scope.name="nassim";
+    $scope.stateOfBeing= "hungry";
+
+    $scope.sayMessage= function(){
+      let msg = "Nassim likes cokkies";
+      let output = $filter('uppercase')(msg);
+      return output;
+    };
+
+  $scope.feedYaakov = function (){
+    $scope.stateOfBeing = "fed";
+  };
+
 })();
