@@ -78,7 +78,7 @@
 
       $scope.saylovesMessage= function(){
         let msg = "Nassim likes cokkies";
-        let output = $filter('uppercase')(msg);
+        let output = lovesfilter(msg);
         return output;
     };
 
