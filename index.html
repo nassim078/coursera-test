@@ -29,7 +29,7 @@
 name calculator
 -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
  <head>
    <meta charset="utf-8">
@@ -45,4 +45,28 @@ name calculator
    </div>
 
  </body>
+</html> code ro upper case the input field after elevating the focus on the field  -->
+
+<!DOCTYPE html>
+<html ng-app='MsgApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <title>Filters</title>
+  </head>
+  <body>
+    <h1>Filters</h1>
+    <div ng-controller='MsgController'>
+      {{name}} has a message for you: <br>
+      {{sayMessage()}}
+      <div>
+        <button ng-click="feedYaakov()">Feed Yaakov</button>
+        <br>
+
+        <img ng-src="images/yaakov_{{stateOfBeing}}.png">
+      </div>
+    </div>
+  </body>
 </html>
